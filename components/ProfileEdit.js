@@ -26,6 +26,7 @@ function ProfileEdit({ setShowModal }) {
   const handleSubmit = async (e) => {
    
 try {
+  e.preventDefault()
    await editProfile(user);
 } catch (error) {
   console.log(error)
