@@ -6,7 +6,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
-  return<GoogleOAuthProvider clientId={process.env.client_id}> <Component {...pageProps} /></GoogleOAuthProvider>
+  return<GoogleOAuthProvider clientId="483883766761-dugimrugcrnf7us5n80fmp1evjkmbivc.apps.googleusercontent.com"> <Component {...pageProps} /></GoogleOAuthProvider>
 }
 
 MyApp.getInitialProps = async ({ Component, ctx }) => {
