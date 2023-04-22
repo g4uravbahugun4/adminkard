@@ -1,7 +1,7 @@
 import Navbar from "../components/navbar";
 import React, { useState } from "react";
 import { Line } from "rc-progress";
-import Sidebar from ".../components/sidebar";
+import Sidebar from "../components/sidebar";
 
 
 import ProfileEdit from "../components/ProfileEdit";
