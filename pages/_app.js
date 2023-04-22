@@ -6,10 +6,7 @@ import { redirectUser } from "../utils/auth";
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
-  return (
-        <Component {...pageProps} />
-         
-  );
+  return<GoogleOAuthProvider clientId={process.env.client_id}> <Component {...pageProps} /></GoogleOAuthProvider>
 }
 
 MyApp.getInitialProps = async ({ Component, ctx }) => {

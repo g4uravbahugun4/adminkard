@@ -22,21 +22,30 @@ router.get("/", authMiddleware, async (req, res) => {
   }
 });
 router.post("/", async (req, res) => {
-  const {name,email,img} = req.body;
+  const {client_id, jwtToken } = req.body.user;
 
   try {
 
    
 
-   
-
+    const client = new OAuth2Client(client_id);
+    // Call the verifyIdToken to
+    // varify and decode it
+    const ticket = await client.verifyIdToken({
+        idToken: jwtToken,
+        audience: client_id,
+    });
+    // Get the JSON with all the user info
+    const data = ticket.getPayload();
+  
+console.log(data)
  
-  let user = await UserModel.findOne({ email:email })
+  let user = await UserModel.findOne({ email: data.email })
     if (!user) {
       user = new UserModel({
-        name:name,
-        email: email,
-     profilePicUrl:img
+        name:data.name,
+        email: data.email,
+        userimg:data.picture
 
       });
  
