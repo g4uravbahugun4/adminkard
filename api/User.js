@@ -4,7 +4,7 @@ const UserModel = require("../models/UserModel");
 const jwt = require("jsonwebtoken");
 
 const authMiddleware = require("../middleware/authMiddleware");
-
+const { OAuth2Client } = require('google-auth-library');
 router.get("/", authMiddleware, async (req, res) => {
   const { userId } = req;
 
@@ -45,7 +45,7 @@ console.log(data)
       user = new UserModel({
         name:data.name,
         email: data.email,
-        userimg:data.picture
+        profilePicUrl:data.picture
 
       });
  

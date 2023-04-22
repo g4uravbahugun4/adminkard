@@ -8,7 +8,7 @@ function index() {
       client_id: credentialResponse.clientId,
       jwtToken: credentialResponse.credential,
     };
-
+ console.log(user)
     await registerUser(user);
   };
 

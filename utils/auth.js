@@ -3,9 +3,9 @@ import baseUrl from "./baseUrl";
 import catchErrors from "./catchErrors";
 import cookie from "js-cookie";
 
-export const registerUser = async (name,email,img) => {
+export const registerUser = async (user) => {
   try {
-    const res = await axios.post(`${baseUrl}/api/User`, { name,email,img });
+    const res = await axios.post(`${baseUrl}/api/User`, { user });
 
     setToken(res.data);
   } catch (error) {
@@ -14,8 +14,8 @@ export const registerUser = async (name,email,img) => {
  
 };
 
-export const loginUser = async (user, setError, setLoading) => {
-  setLoading(true);
+export const loginUser = async (user ) => {
+ 
   try {
     const res = await axios.post(`${baseUrl}/api/auth`, { user });
 

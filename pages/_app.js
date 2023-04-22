@@ -2,7 +2,7 @@ import axios from "axios";
 import { parseCookies, destroyCookie } from "nookies";
 import baseUrl from "../utils/baseUrl";
 import { redirectUser } from "../utils/auth";
-
+import { GoogleOAuthProvider } from '@react-oauth/google';
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
