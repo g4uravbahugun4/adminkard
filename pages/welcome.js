@@ -1,13 +1,13 @@
-import Navbar from "@/components/navbar";
-import React, { useState, useEffect } from "react";
+import Navbar from "../components/navbar";
+import React, { useState } from "react";
 import { Line } from "rc-progress";
-import Sidebar from "@/components/sidebar";
-import { parseCookies } from "nookies";
+import Sidebar from ".../components/sidebar";
 
-import ProfileEdit from "@/components/ProfileEdit";
-import StudyPreference from "@/components/studyPreference";
-import Experience from "@/components/experience";
-import Education from "@/components/education";
+
+import ProfileEdit from "../components/ProfileEdit";
+import StudyPreference from "../components/studyPreference";
+import Experience from "../components/experience";
+import Education from "../components/education";
 function welcome({user}) {
   const [showmodal, setShowModal] = useState(false);
   const [showMenu, setShowMenu] = useState(true)
